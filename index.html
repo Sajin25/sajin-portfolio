@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajin Sabu | Portfolio</title>
+    <meta name="description" content="Portfolio of Sajin Sabu, Computer Science Engineering Student and Web Developer.">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
 
+    <!-- Background Canvas for Particles -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar glass">
+        <div class="nav-content">
+            <a href="#home" class="logo">Sajin<span>.dev</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="hamburger">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <h4>Hello, World! I am</h4>
+            <h1>Sajin Sabu</h1>
+            <h3 class="typing-text">I'm a <span id="typed"></span></h3>
+            <p>A passionate final-year Computer Science Engineering student dedicated to building innovative, AI-assisted, and scalable web solutions.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">Download Resume <i class="fas fa-download"></i></a>
+                <a href="#contact" class="btn btn-secondary">Contact Me <i class="fas fa-paper-plane"></i></a>
+            </div>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+        <div class="hero-img reveal">
+            <div class="img-box glass">
+                <!-- Replace src with your actual image path -->
+                <img src="assets/profile.jpg" alt="Sajin Sabu" onerror="this.src='https://via.placeholder.com/400x400/1a1a2e/00d2ff?text=Sajin+Sabu'">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="section-title reveal">
+            <h2>About <span>Me</span></h2>
+        </div>
+        <div class="about-content grid-2 reveal">
+            <div class="about-text glass">
+                <h3>Passionate Web Developer & Innovator</h3>
+                <p>I am a final-year CS engineering student with a deep passion for web development and software engineering. I specialize in building modern, responsive, and user-friendly applications.</p>
+                <p>My interests extend into AI-assisted development, continuously learning new frameworks, and leveraging modern technologies to solve real-world problems. My goal is to engineer solutions that make a difference while growing my technical expertise.</p>
+                <div class="stats-container">
+                    <div class="stat-box">
+                        <h4 class="counter" data-target="15">0</h4>
+                        <p>Projects</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 class="counter" data-target="5">0</h4>
+                        <p>Certifications</p>
+                    </div>
+                    <div class="stat-box">
+                        <h4 class="counter" data-target="3">0</h4>
+                        <p>Hackathons</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education section-padding">
+        <div class="section-title reveal">
+            <h2>My <span>Education</span></h2>
+        </div>
+        <div class="timeline reveal">
+            <div class="timeline-item glass">
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                <span class="date">2020 - 2024</span>
+                <h3>B.Tech in Computer Science Engineering</h3>
+                <h4>Your College Name Here</h4>
+                <p>Focusing on software development, data structures, and modern web technologies. Active participant in technical clubs and hackathons.</p>
+            </div>
+            <div class="timeline-item glass">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <span class="date">2018 - 2020</span>
+                <h3>Higher Secondary Education</h3>
+                <h4>Your School Name Here</h4>
+                <p>Graduated with top honors, specializing in Mathematics and Computer Science.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section-padding">
+        <div class="section-title reveal">
+            <h2>Technical <span>Skills</span></h2>
+        </div>
+        <div class="skills-grid reveal">
+            <div class="skill-card glass"><i class="fab fa-html5" style="color: #e34c26;"></i><h3>HTML5</h3></div>
+            <div class="skill-card glass"><i class="fab fa-css3-alt" style="color: #264de4;"></i><h3>CSS3</h3></div>
+            <div class="skill-card glass"><i class="fab fa-js" style="color: #f7df1e;"></i><h3>JavaScript</h3></div>
+            <div class="skill-card glass"><i class="fab fa-python" style="color: #306998;"></i><h3>Python</h3></div>
+            <div class="skill-card glass"><i class="fab fa-react" style="color: #61dafb;"></i><h3>React</h3></div>
+            <div class="skill-card glass"><i class="fab fa-node-js" style="color: #339933;"></i><h3>Node.js</h3></div>
+            <div class="skill-card glass"><i class="fas fa-database" style="color: #00758f;"></i><h3>SQL</h3></div>
+            <div class="skill-card glass"><i class="fab fa-git-alt" style="color: #f34f29;"></i><h3>Git & GitHub</h3></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section-padding">
+        <div class="section-title reveal">
+            <h2>Featured <span>Projects</span></h2>
+        </div>
+        <div class="projects-grid reveal">
+            <!-- Project 1 -->
+            <div class="project-card glass">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400/2a2a4a/ffffff?text=Auction+System" alt="Online Auction">
+                </div>
+                <div class="project-info">
+                    <h3>Online Auction Management System</h3>
+                    <p>A secure platform for bidding on items in real-time with user authentication and automated bidding logic.</p>
+                    <div class="tags">
+                        <span>React</span><span>Node.js</span><span>MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Live</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-card glass">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400/2a2a4a/ffffff?text=Elderly+Care" alt="Healthcare App">
+                </div>
+                <div class="project-info">
+                    <h3>Elderly Healthcare Management App</h3>
+                    <p>An application designed to track medication schedules, doctor appointments, and emergency contacts for the elderly.</p>
+                    <div class="tags">
+                        <span>Python</span><span>Django</span><span>SQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Live</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-card glass">
+                <div class="project-img">
+                    <img src="https://via.placeholder.com/600x400/2a2a4a/ffffff?text=EKA2026+Fest" alt="Tech Fest">
+                </div>
+                <div class="project-info">
+                    <h3>EKA2026 Tech Fest Website</h3>
+                    <p>The official interactive portal for the college technical fest, featuring event registration and live leaderboards.</p>
+                    <div class="tags">
+                        <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="btn-small"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Live</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding">
+        <div class="section-title reveal">
+            <h2>Get In <span>Touch</span></h2>
+        </div>
+        <div class="contact-container grid-2 reveal">
+            <div class="contact-info glass">
+                <h3>Contact Information</h3>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <p>sajin.sabu@example.com</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <p>+91 98765 43210</p>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p>India</p>
+                </div>
+            </div>
+            <form class="contact-form glass" id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sajin Sabu. Built with <i class="fas fa-heart" style="color: red;"></i> & Code.</p>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button id="scroll-top"><i class="fas fa-arrow-up"></i></button>
+
+    <!-- Typed.js for typing effect -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="script.js"></script>
+</body>
+</html>
