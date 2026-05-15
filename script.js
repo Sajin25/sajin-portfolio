@@ -125,20 +125,27 @@ function animateCounter(counter) {
     updateCount();
 }
 
-// --- Project Details Toggle ---
-const detailsButtons = document.querySelectorAll('.details-btn');
-detailsButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const extendedDesc = this.closest('.project-info').querySelector('.extended-desc');
-        extendedDesc.classList.toggle('active');
-        
-        if (extendedDesc.classList.contains('active')) {
-            this.innerText = 'Hide Details';
-        } else {
-            this.innerText = 'Details';
-        }
-    });
+// --- Modal Popup Logic ---
+const modal = document.getElementById('project1-modal');
+const openModalBtn = document.getElementById('proj1-details-btn');
+const closeModalBtn = document.querySelector('.close-modal');
+
+// Open modal when Details button is clicked
+openModalBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modal.classList.add('active');
+});
+
+// Close modal when the 'X' is clicked
+closeModalBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+});
+
+// Close modal when clicking anywhere outside the modal box
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+    }
 });
 
 // --- Scroll to Top Button ---
