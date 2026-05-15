@@ -3,13 +3,16 @@ const cursor = document.querySelector('.cursor');
 const cursorFollower = document.querySelector('.cursor-follower');
 
 document.addEventListener('mousemove', (e) => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-    
-    setTimeout(() => {
-        cursorFollower.style.left = e.clientX - 11 + 'px';
-        cursorFollower.style.top = e.clientY - 11 + 'px';
-    }, 50);
+    // Only apply if custom cursor elements exist (hidden on mobile)
+    if(window.innerWidth > 768) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(() => {
+            cursorFollower.style.left = e.clientX - 11 + 'px';
+            cursorFollower.style.top = e.clientY - 11 + 'px';
+        }, 50);
+    }
 });
 
 // Hover effects for cursor
@@ -73,7 +76,7 @@ document.querySelectorAll('.nav-links li a').forEach(n => n.addEventListener('cl
 // --- Typed.js Animation ---
 if (document.getElementById('typed')) {
     new Typed('#typed', {
-        strings: ['Computer Science Student.', 'Web Developer.', 'Tech Enthusiast.', 'Problem Solver.'],
+        strings: ['Software Developer.', 'CS Engineering Student.', 'Web App Builder.', 'Problem Solver.'],
         typeSpeed: 50,
         backSpeed: 30,
         loop: true
@@ -108,7 +111,7 @@ scrollReveal(); // Check on load
 // --- Counter Animation ---
 function animateCounter(counter) {
     const target = +counter.getAttribute('data-target');
-    const increment = target / 50; // Speed adjustment
+    const increment = target / 40; // Speed adjustment
     
     const updateCount = () => {
         const count = +counter.innerText;
@@ -121,6 +124,22 @@ function animateCounter(counter) {
     };
     updateCount();
 }
+
+// --- Project Details Toggle ---
+const detailsButtons = document.querySelectorAll('.details-btn');
+detailsButtons.forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const extendedDesc = this.closest('.project-info').querySelector('.extended-desc');
+        extendedDesc.classList.toggle('active');
+        
+        if (extendedDesc.classList.contains('active')) {
+            this.innerText = 'Hide Details';
+        } else {
+            this.innerText = 'Details';
+        }
+    });
+});
 
 // --- Scroll to Top Button ---
 const scrollTopBtn = document.getElementById('scroll-top');
@@ -139,8 +158,12 @@ scrollTopBtn.addEventListener('click', () => {
 // --- Dynamic Particle Background ---
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+resizeCanvas();
 
 let particlesArray = [];
 
@@ -188,7 +211,6 @@ initParticles();
 animateParticles();
 
 window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    resizeCanvas();
     initParticles();
 });
