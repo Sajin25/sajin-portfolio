@@ -52,7 +52,7 @@
             <h3 class="typing-text">I'm a <span id="typed"></span></h3>
             <p>A passionate final-year Computer Science Engineering student dedicated to building innovative, scalable, and high-performance software solutions.</p>
             <div class="btn-group">
-                <a href="#" class="btn btn-primary">Download Resume <i class="fas fa-download"></i></a>
+                <a href="assets/SAJIN_SABU_RESUME.pdf" target="_blank" class="btn btn-primary">Download Resume <i class="fas fa-download"></i></a>
                 <a href="#contact" class="btn btn-secondary">Contact Me <i class="fas fa-paper-plane"></i></a>
             </div>
             <div class="social-links">
@@ -63,7 +63,7 @@
         </div>
         <div class="hero-img reveal">
             <div class="img-box glass">
-                <!-- Replace src with your actual image path when ready -->
+                <!-- Replace src with your professional profile image -->
                 <img src="assets/profile.jpg" alt="Sajin Sabu" onerror="this.src='https://via.placeholder.com/400x400/1a1a2e/00d2ff?text=Sajin+Sabu'">
             </div>
         </div>
@@ -151,17 +151,11 @@
                 <div class="project-info">
                     <h3>Online Auction Management System</h3>
                     <p>A secure platform for bidding on items in real-time with user authentication.</p>
-                    
-                    <!-- Hidden Detailed Description -->
-                    <div class="extended-desc">
-                        <p>This comprehensive web application revolutionizes the traditional auctioning process by bringing it entirely online. Features include real-time live bidding, secure user registration and authentication, and an intuitive dashboard for sellers to easily list their items. The system ensures fair play with automated timer-based closures and instant notifications for outbid alerts and winning bids, ensuring a seamless experience for both buyers and sellers.</p>
-                    </div>
-
                     <div class="tags">
                         <span>React</span><span>Node.js</span><span>MongoDB</span>
                     </div>
                     <div class="project-links">
-                        <button class="btn-small details-btn">Details</button>
+                        <button class="btn-small" id="proj1-details-btn">Details</button>
                     </div>
                 </div>
             </div>
@@ -175,8 +169,8 @@
                         <span>React Native</span><span>Firebase</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="btn-small" target="_blank"><i class="fas fa-file-pdf"></i> View Paper</a>
-                        <a href="https://github.com/Sajin25" class="btn-small" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
+                        <a href="assets/MedSmart_Paper.pdf" class="btn-small" target="_blank"><i class="fas fa-file-pdf"></i> View Paper</a>
+                        <a href="https://github.com/Sajin25/MedSmart" class="btn-small" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
                     </div>
                 </div>
             </div>
@@ -190,8 +184,8 @@
                         <span>JavaScript</span><span>WebSockets</span><span>Vercel</span>
                     </div>
                     <div class="project-links">
-                        <a href="#" class="btn-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Live</a>
-                        <a href="https://github.com/Sajin25" class="btn-small" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
+                        <a href="https://react-chat-app-iota-cyan.vercel.app" class="btn-small" target="_blank"><i class="fas fa-external-link-alt"></i> View Live</a>
+                        <a href="https://github.com/Sajin25/react-chat-app" class="btn-small" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
                     </div>
                 </div>
             </div>
@@ -235,6 +229,15 @@
             </form>
         </div>
     </section>
+
+    <!-- Project 1 Modal Popup -->
+    <div id="project1-modal" class="modal-overlay">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h3>Online Auction Management System</h3>
+            <p>This comprehensive web application revolutionizes the traditional auctioning process by bringing it entirely online. Features include real-time live bidding, secure user registration and authentication, and an intuitive dashboard for sellers to easily list their items. The system ensures fair play with automated timer-based closures and instant notifications for outbid alerts and winning bids, ensuring a seamless experience for both buyers and sellers.</p>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
