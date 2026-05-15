@@ -387,26 +387,6 @@ body {
     border-color: var(--primary-color);
 }
 
-/* Project Details Toggle Styles */
-.extended-desc {
-    display: none;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    padding-top: 15px;
-    border-top: 1px solid var(--glass-border);
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
-.extended-desc.active {
-    display: block;
-    animation: fadeIn 0.4s ease-in-out;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 /* Timeline Education */
 .timeline {
     position: relative;
@@ -508,6 +488,68 @@ body {
     border-color: var(--primary-color);
 }
 
+/* Modal Popup Styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 600px;
+    width: 90%;
+    padding: 40px 30px;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 2rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    color: var(--primary-color);
+}
+
+.modal-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.modal-content p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -586,6 +628,6 @@ footer {
     .hamburger.active .bar:nth-child(2) { opacity: 0; }
     .hamburger.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
     .hamburger.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
-    .cursor, .cursor-follower { display: none; } /* Hide custom cursor on mobile */
+    .cursor, .cursor-follower { display: none; } 
     .hero-img .img-box { width: 280px; height: 280px; }
 }
